@@ -29,42 +29,42 @@ const port = process.env.PORT || 8080;
 //   console.log(`App start on ${port}`);
 // });
 app.use(express.static('public'));
-const server =app.listen(port, "172.16.4.41", () => {
-  console.log(`App start on ${port}`);
-});
-// app.listen(port, () => {
+// const server =app.listen(port, "172.16.4.41", () => {
 //   console.log(`App start on ${port}`);
 // });
+app.listen(port, () => {
+  console.log(`App start on ${port}`);
+});
 
 
 //----------------------------------
 
-const socket = require("socket.io");
+// const socket = require("socket.io");
 
-const io = socket(server);
+// const io = socket(server);
 
-io.on("connection", (socket) => {
-  console.log(`New connection: ${socket.id}`);
+// io.on("connection", (socket) => {
+//   console.log(`New connection: ${socket.id}`);
 
-  const checkConnection = () => {
-    // socket.emit("isConnect", "awaishamza579@gmail.com");
+//   const checkConnection = () => {
+//     // socket.emit("isConnect", "awaishamza579@gmail.com");
     
-  };
-  setInterval(checkConnection, 5000);
-  socket.on("response", (data) => {
-    console.log(
-      `response from ${socket.id}: ${data} ${new Date()
-        .toTimeString()
-        .split(" ")
-        .at(0)}`
-    );
-  });
-  socket.on("active", (data) => {
-    console.log(`New message from ${socket.id}: ${data}`);
-  });
+//   };
+//   setInterval(checkConnection, 5000);
+//   socket.on("response", (data) => {
+//     console.log(
+//       `response from ${socket.id}: ${data} ${new Date()
+//         .toTimeString()
+//         .split(" ")
+//         .at(0)}`
+//     );
+//   });
+//   socket.on("active", (data) => {
+//     console.log(`New message from ${socket.id}: ${data}`);
+//   });
 
   
-});
+// });
 
 app.use(express.static(path.resolve(__dirname, "frontend")));
 
