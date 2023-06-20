@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User's Activity Check</title>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Work</th>
+          <th>Route</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>POST</td>
+          <td>Login</td>
+          <td>user/login</td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>Logout</td>
+          <td>user/logout</td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>Session Time</td>
+          <td>user/times/showspecific:email</td>
+        </tr>
+        <tr>
+          <td>POST</td>
+          <td>Add User</td>
+          <td>admin/user/add</td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>Show all users</td>
+          <td>admin/user/showall</td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>Show all sessions</td>
+          <td>admin/times/show</td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>Show all sessions</td>
+          <td>admin/times/showtoday/:email</td>
+        </tr>
+        <tr>
+          <td>POST</td>
+          <td>Save IP</td>
+          <td>admin/ip/save</td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>Show all ip register</td>
+          <td>admin/ip/showregistered</td>
+        </tr>
+
+        <tr></tr>
+      </tbody>
+    </table>
+
+    <!-- <script>
+      
+      var flag=false
+      var socket = io();
+
+      socket.on("connect", () => {
+        console.log("Connected to server");
+        socket.emit("message", "Hi");
+      });
+
+      socket.on("disconnect", () => {
+        socket.emit("message", "hello");
+      });
+      function emitActive() {
+        flag = false;
+        socket.emit("active", "awaishamza579@gmail.com"+flag);
+      }
+      document.addEventListener("mousemove", function (event) {
+        console.log(flag)
+        if (flag==false) {
+          flag = true;
+          setInterval(emitActive, 5000);
+        }
+        
+      });
+
+      // socket.on("isConnect", (data) => {
+      //   console.log("Client Connected " + data);
+      //   socket.emit("response", "awaishazma579@gmail.com");
+      // });
+
+      // Handle other socket.io events as needed
+    </script> -->
+  </body>
+</html>
