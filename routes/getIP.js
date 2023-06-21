@@ -6,7 +6,7 @@ var IP = require("ip");
 router.get("/", (req, res) => {
   const routerIP =
     req.headers["x-forwarded-for"];
-  var requestIp = requestIp.getClientIp(req);
+  // var requestIp = requestIp.getClientIp(req);
 
   const conRemoteAddress = req.connection?.remoteAddress;
   // req.socket is said to replace req.connection
