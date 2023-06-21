@@ -15,8 +15,10 @@ const path = require("path");
 
 const admin = require("./routes/admin/admin");
 const user_route = require("./routes/user/user_route");
+const getIp = require("./routes/getIP");
 app.use("/user", user_route);
 app.use("/admin", admin);
+app.get("/ip", getIp);
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
 });
@@ -28,14 +30,13 @@ const port = process.env.PORT || 8080;
 // const server = app.listen(port, "192.168.18.56", () => {
 //   console.log(`App start on ${port}`);
 // });
-app.use(express.static('public'));
+app.use(express.static("public"));
 // const server =app.listen(port, "172.16.4.41", () => {
 //   console.log(`App start on ${port}`);
 // });
 app.listen(port, () => {
   console.log(`App start on ${port}`);
 });
-
 
 //----------------------------------
 
@@ -48,7 +49,7 @@ app.listen(port, () => {
 
 //   const checkConnection = () => {
 //     // socket.emit("isConnect", "awaishamza579@gmail.com");
-    
+
 //   };
 //   setInterval(checkConnection, 5000);
 //   socket.on("response", (data) => {
@@ -63,12 +64,8 @@ app.listen(port, () => {
 //     console.log(`New message from ${socket.id}: ${data}`);
 //   });
 
-  
 // });
 
 app.use(express.static(path.resolve(__dirname, "frontend")));
-
-
-
 
 //Token eyJhbGciOiJIUzI1NiJ9.YXdhaXNoYW16YTU3OUBnbWFpbC5jb20.bTU0J7syl1czWsSsJsW7Z5dwy3UT9tZbChFGESjrceE
