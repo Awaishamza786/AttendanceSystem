@@ -5,7 +5,7 @@ var requestIp = require('request-ip');
 
 router.get('/', (req, res) => {
   const routerIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  var requestIp = requestIp.getClientIp(req);
+  var requestIp = req.connection.remoteAddress
   res.send(`Router's IP address: ${routerIP}`+`var ${requestIp} = requestIp.getClientIp(req);`);
 });
 
