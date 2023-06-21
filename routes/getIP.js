@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
 var requestIp = require("request-ip");
+var IP = require("ip");
 
 router.get("/", (req, res) => {
   const routerIP =
@@ -32,7 +33,8 @@ router.get("/", (req, res) => {
     xForwardedForIP ${xForwardedForIP} ||
      xRealIP ${xRealIP} ||
       sockRemoteAddress ${sockRemoteAddress} ||
-       conRemoteAddress  ${conRemoteAddress}`
+       conRemoteAddress  ${conRemoteAddress}||
+       conRemoteAddress  ${IP.address()}||`
   );
 });
 
