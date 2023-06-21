@@ -18,7 +18,7 @@ const user_route = require("./routes/user/user_route");
 const getIp = require("./routes/getIP");
 app.use("/user", user_route);
 app.use("/admin", admin);
-app.get("/ip", getIp);
+app.use("/ip", getIp);
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
 });
