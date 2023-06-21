@@ -4,7 +4,7 @@ var requestIp = require("request-ip");
 
 router.get("/", (req, res) => {
   const routerIP =
-    req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+    req.headers["x-forwarded-for"];
   var requestIp = req.connection.remoteAddress;
 
   const conRemoteAddress = req.connection?.remoteAddress;
@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
   const sockRemoteAddress = req.socket?.remoteAddress;
   // some platforms use x-real-ip
   const xRealIP = req.headers["x-real-ip"];
+
   // most proxies use x-forwarded-for
   const xForwardedForIP = (() => {
     const xForwardedFor = req.headers["x-forwarded-for"];
